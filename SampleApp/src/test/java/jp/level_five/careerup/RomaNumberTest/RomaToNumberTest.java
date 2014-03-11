@@ -157,5 +157,10 @@ public class RomaToNumberTest {
 	public void test拡張機能をつけるとCCDは300を返す(){
 		int number = convertRtoN.convert("ex", "CCD");
 		assertEquals(300, number);
+	}
+	@Test
+	public void test消してね(){
+		int number = convertRtoN.convert("ex", "CCD");
+		assertEquals(300, number);
 	}	
 }
