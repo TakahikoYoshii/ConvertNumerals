@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class RomaToNumber {
 
 	public int convert(String string) {
-		char[] charArray = new char[20];
+		char[] charArray = new char[string.length()+5];
 		int number = 0;
 		pushCharArray(string, charArray);
 		for (int i = 0; i <= charArray.length - 1; i++) {
