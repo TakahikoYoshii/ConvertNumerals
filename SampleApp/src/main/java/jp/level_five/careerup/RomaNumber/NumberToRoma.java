@@ -34,10 +34,10 @@ public class NumberToRoma {
 				{"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"},
 				{"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"},
 				{"", "M", "MM", "MMM", "", "", "", "", "", ""},};
-		String str = replaceOnesPlace(strarray, iterator, romanArray);
-		str = replaceTensPlace(strarray, iterator, romanArray) + str;
-		str = replaceHundredsPlace(strarray, iterator, romanArray) + str;
-		str = replaceThousandsPlace(strarray, iterator, romanArray) + str;
+		String str = replaceThousandsPlace(strarray, iterator, romanArray)
+				   + replaceHundredsPlace(strarray, iterator, romanArray)
+				   + replaceTensPlace(strarray, iterator, romanArray)
+				   + replaceOnesPlace(strarray, iterator, romanArray);
 		return str;
 	}
 	
