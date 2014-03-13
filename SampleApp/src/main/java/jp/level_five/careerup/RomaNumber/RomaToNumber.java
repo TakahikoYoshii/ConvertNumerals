@@ -107,12 +107,13 @@ public class RomaToNumber {
 				|| Pattern.matches(".*I[VX].*I[VX].*", string)
 				|| Pattern.matches(".*V.*V.*", string)
 				|| Pattern.matches(".*X{4,}.*", string)				
-				|| Pattern.matches(".*X[LC].*X[LC].*", string)
+				|| Pattern.matches(".*X[IVLC].*X[IVLCDM].*", string)
 				|| Pattern.matches(".*L.*L.*", string)
 				|| Pattern.matches(".*C{4,}.*", string)
-				|| Pattern.matches(".*C[MD].*C[MD].*", string)
+				|| Pattern.matches(".*C[IVXL].*C[IVXLDM].*", string)
 				|| Pattern.matches(".*D.*D.*", string)
-				|| Pattern.matches(".*M{4,}.*", string))
+				|| Pattern.matches(".*M{4,}.*", string)
+				|| Pattern.matches(".*M[IVXLCD].*M[CD].*", string))
 			throw new RuntimeException();
 	}
 }
