@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class RomaToNumber {
 
 	public int convert(String string) {
-		char[] charArray = new char[20];
+		char[] charArray = new char[string.length()+5];
 		int number = 0;
 		pushCharArray(string, charArray);
 		for (int i = 0; i <= charArray.length - 1; i++) {
@@ -52,7 +52,7 @@ public class RomaToNumber {
 					& ('L' == charArray[i + 1] | 'C' == charArray[i + 1])) {
 				return -10;
 			} else if (charArray.length + 1 > i + 1
-					& ('L' == charArray[i + 2] | 'C' == charArray[i + 2])) {
+					& ('L' == charArray[i + 2] | 'C' == charArray[i + 2] )) {
 				throw new RuntimeException();
 			}
 			return 10;
@@ -101,13 +101,19 @@ public class RomaToNumber {
 				|| Pattern.matches(".*[IVL]C.*", string)
 				|| Pattern.matches(".*[IV]L.*", string)
 				|| Pattern.matches(".*VX.*", string)
+				|| Pattern.matches(".*X[LC][DM].*", string)
 				|| Pattern.matches(".*I{4,}.*", string)
-				|| Pattern.matches(".*V{2,}.*", string)
-				|| Pattern.matches(".*X{4,}.*", string)
-				|| Pattern.matches(".*L{2,}.*", string)
+				|| Pattern.matches(".*I[VX][LCDM].*", string)
+				|| Pattern.matches(".*I[VX].*I[VX].*", string)
+				|| Pattern.matches(".*V.*V.*", string)
+				|| Pattern.matches(".*X{4,}.*", string)				
+				|| Pattern.matches(".*X[IVLC].*X[IVLCDM].*", string)
+				|| Pattern.matches(".*L.*L.*", string)
 				|| Pattern.matches(".*C{4,}.*", string)
-				|| Pattern.matches(".*D{2,}.*", string)
-				|| Pattern.matches(".*M{4,}.*", string))
+				|| Pattern.matches(".*C[IVXL].*C[IVXLDM].*", string)
+				|| Pattern.matches(".*D.*D.*", string)
+				|| Pattern.matches(".*M{4,}.*", string)
+				|| Pattern.matches(".*M[IVXLCD].*M[CD].*", string))
 			throw new RuntimeException();
 	}
 }
