@@ -166,4 +166,8 @@ public class RomaToNumberTest {
 	public void test文字列のIVIVを渡すと例外が発生する(){
 		convertRtoN.convert("IVIV");
 	}
+	@Test(expected = RuntimeException.class)
+	public void test文字列のCMCMCMCMCMを渡すと例外が発生する(){
+		convertRtoN.convert("CMCMCMCMCM");
+	}
 }
