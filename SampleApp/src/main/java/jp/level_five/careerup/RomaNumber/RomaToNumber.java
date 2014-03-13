@@ -101,13 +101,13 @@ public class RomaToNumber {
 				|| Pattern.matches(".*[IVL]C.*", string)
 				|| Pattern.matches(".*[IV]L.*", string)
 				|| Pattern.matches(".*VX.*", string)
-				|| Pattern.matches(".*I.*I.*I.*I.*", string)
+				|| Pattern.matches(".*I{4,}.*", string)
 				|| Pattern.matches(".*V.*V.*", string)
-				|| Pattern.matches(".*X.*X.*X.*X.*", string)
+				|| Pattern.matches(".*X{4,}.*", string)
 				|| Pattern.matches(".*L.*L.*", string)
-				|| Pattern.matches(".*C.*C.*C.*C.*", string)
+				|| Pattern.matches(".*C{4,}.*", string)
 				|| Pattern.matches(".*D.*D.*", string)
-				|| Pattern.matches(".*M.*M.*M.*M.*", string))
+				|| Pattern.matches(".*M{4,}.*", string))
 			throw new RuntimeException();
 	}
 }

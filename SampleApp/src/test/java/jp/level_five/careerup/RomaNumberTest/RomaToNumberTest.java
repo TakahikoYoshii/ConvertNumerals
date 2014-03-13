@@ -162,4 +162,8 @@ public class RomaToNumberTest {
 	public void test文字列のMCCMを渡すと例外が発生する(){
 		convertRtoN.convert("MCCM");
 	}
+	@Test(expected = RuntimeException.class)
+	public void test文字列のIVIVを渡すと例外が発生する(){
+		convertRtoN.convert("IVIV");
+	}
 }
