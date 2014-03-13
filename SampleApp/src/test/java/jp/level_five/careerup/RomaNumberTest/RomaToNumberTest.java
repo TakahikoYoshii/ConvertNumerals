@@ -170,4 +170,8 @@ public class RomaToNumberTest {
 	public void test文字列のCMCMCMCMCMを渡すと例外が発生する(){
 		convertRtoN.convert("CMCMCMCMCM");
 	}
+	@Test(expected = RuntimeException.class)
+	public void test文字列のXCMを渡すと例外が発生する(){
+		convertRtoN.convert("XCM");
+	}
 }

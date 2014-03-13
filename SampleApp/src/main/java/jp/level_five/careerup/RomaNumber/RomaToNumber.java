@@ -52,7 +52,7 @@ public class RomaToNumber {
 					& ('L' == charArray[i + 1] | 'C' == charArray[i + 1])) {
 				return -10;
 			} else if (charArray.length + 1 > i + 1
-					& ('L' == charArray[i + 2] | 'C' == charArray[i + 2])) {
+					& ('L' == charArray[i + 2] | 'C' == charArray[i + 2] )) {
 				throw new RuntimeException();
 			}
 			return 10;
@@ -101,7 +101,9 @@ public class RomaToNumber {
 				|| Pattern.matches(".*[IVL]C.*", string)
 				|| Pattern.matches(".*[IV]L.*", string)
 				|| Pattern.matches(".*VX.*", string)
+				|| Pattern.matches(".*X[LC][DM].*", string)
 				|| Pattern.matches(".*I{4,}.*", string)
+				|| Pattern.matches(".*I[VX][LCDM].*", string)
 				|| Pattern.matches(".*I[VX].*I[VX].*", string)
 				|| Pattern.matches(".*V.*V.*", string)
 				|| Pattern.matches(".*X{4,}.*", string)				
