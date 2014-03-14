@@ -182,4 +182,13 @@ public class RomaToNumberTest {
 	public void test文字列のMCMDを渡すと例外が発生する(){
 		convertRtoN.convert("MCMD");
 	}
+	   @Test(expected = RuntimeException.class)
+	    public void test文字列のXCXを渡すと例外が発生する(){
+	        convertRtoN.convert("XCX");
+	    }
+       @Test(expected = RuntimeException.class)
+       public void test文字列のIVIを渡すと例外が発生する(){
+           convertRtoN.convert("IVI");
+       }
+
 }
